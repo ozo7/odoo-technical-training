@@ -20,7 +20,7 @@ class olafmodule(models.Model):
             values['name'] = unidecode(values['name'])
         return super(my_module, self).create(values)
 
-    @api.multi
+#    @api.multi <= legacy decoriation, turned standard, can be skipped
     def write(self, values):
         if 'name' in values:
             values['name'] = unidecode(values['name'])
