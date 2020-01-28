@@ -18,13 +18,13 @@ class olafmodule(models.Model):
     def create(self, values):
         if 'name' in values:
             values['name'] = unidecode(values['name'])
-        return super(my_module, self).create(values)
+        return super(olafmodule, self).create(values)
 
 #    @api.multi <= legacy decoriation, turned standard, can be skipped
     def write(self, values):
         if 'name' in values:
             values['name'] = unidecode(values['name'])
-        return super(my_module, self).write(values)
+        return super(olafmodule, self).write(values)
     
     @api.depends('value')
     def _value_pc(self):
