@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="olafmodule.list">
+      <field name="name">olafmodule list</field>
+      <field name="model">olafmodule.olafmodule</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="olafmodule.action_window">
+      <field name="name">olafmodule window</field>
+      <field name="res_model">olafmodule.olafmodule</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <record model="ir.actions.server" id="olafmodule.action_server">
+      <field name="name">olafmodule server</field>
+      <field name="model_id" ref="model_olafmodule_olafmodule"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="olafmodule" id="olafmodule.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="olafmodule.menu_1" parent="olafmodule.menu_root"/>
+    <menuitem name="Menu 2" id="olafmodule.menu_2" parent="olafmodule.menu_root"/>
+    <!-- actions -->
+    <menuitem name="List" id="olafmodule.menu_1_list" parent="olafmodule.menu_1"
+              action="olafmodule.action_window"/>
+    <menuitem name="Server to list" id="olafmodule" parent="olafmodule.menu_2"
+              action="olafmodule.action_server"/>
+  </data>
+</odoo>
