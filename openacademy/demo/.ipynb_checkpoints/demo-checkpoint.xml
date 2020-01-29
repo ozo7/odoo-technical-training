@@ -1,7 +1,6 @@
 <odoo>
     <data>
 
-<!--
         <record model="openacademy.openacademy" id="course0">
             <field name="name">Course 0</field>
             <field name="description">Course 0's description
@@ -9,7 +8,7 @@
 Can have multiple lines
             </field>
         </record>
--->
+
 
         <record model="openacademy.openacademy" id="course1">
             <field name="name">Course 1</field>
