@@ -17,13 +17,14 @@ class olafmodule(models.Model):
     @api.model
     def create(self, values):
         if 'name' in values:
-            values['name'] = unidecode(values['name'])
+            values['name'] = unidecode(values['name'])            
         return super(olafmodule, self).create(values)
 
 #    @api.multi <= legacy decoriation, turned standard, can be skipped
     def write(self, values):
         if 'name' in values:
             values['name'] = unidecode(values['name'])
+            values['name'] = "overwrittenbyolaf3"
         return super(olafmodule, self).write(values)
     
     @api.depends('value')
