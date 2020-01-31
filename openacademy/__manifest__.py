@@ -29,7 +29,7 @@
         'views/templates.xml',
         'views/openacademy.xml',
         'views/partner.xml',
-        'demo/demo.xml',
+        #'demo/demo.xml', # not needed anymore, I have database dump and load scripts
     ],
     # only loaded in demonstration mode
     'demo': [
