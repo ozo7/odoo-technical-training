@@ -44,6 +44,23 @@ COMMENT ON TABLE public.openacademy_session_res_partner_rel IS 'RELATION BETWEEN
 --
 
 COPY public.openacademy_session_res_partner_rel (openacademy_session_id, res_partner_id) FROM stdin;
+1	11
+1	20
+1	22
+1	31
+1	23
+2	20
+2	22
+2	31
+2	23
+3	29
+3	28
+3	17
+3	32
+3	16
+4	18
+4	27
+4	19
 \.
 
 
@@ -67,14 +84,6 @@ CREATE INDEX openacademy_session_res_partner_rel_openacademy_session_id_idx ON p
 --
 
 CREATE INDEX openacademy_session_res_partner_rel_res_partner_id_idx ON public.openacademy_session_res_partner_rel USING btree (res_partner_id);
-
-
---
--- Name: openacademy_session_res_partner_rel openacademy_session_res_partner_rel_openacademy_session_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: odoo
---
-
-ALTER TABLE ONLY public.openacademy_session_res_partner_rel
-    ADD CONSTRAINT openacademy_session_res_partner_rel_openacademy_session_id_fkey FOREIGN KEY (openacademy_session_id) REFERENCES public.openacademy_session(id) ON DELETE CASCADE;
 
 
 --

@@ -128,11 +128,11 @@ ALTER TABLE ONLY public.openacademy_course ALTER COLUMN id SET DEFAULT nextval('
 --
 
 COPY public.openacademy_course (id, name, description, create_uid, create_date, write_uid, write_date, responsible_id) FROM stdin;
-74	Course 4	some description\n\n\nblabla	2	2020-01-31 12:35:39.40397	2	2020-01-31 12:35:39.40397	6
-70	Course 0	Course 0's description\n\n                Can have multiple lines\n            	1	2020-01-31 12:25:47.064645	1	2020-01-31 15:20:49.123885	\N
-71	Course 1	\N	1	2020-01-31 12:25:47.064645	1	2020-01-31 15:20:49.123885	\N
-72	Course 2	Course 2's description - olaf	1	2020-01-31 12:25:47.064645	1	2020-01-31 15:20:49.123885	\N
-73	Course 3	Course 3's description - olaf	1	2020-01-31 12:25:47.064645	1	2020-01-31 15:20:49.123885	\N
+71	1 - Spanish	Habla espanhol?	1	2020-01-31 12:25:47.064645	2	2020-01-31 15:35:54.973444	6
+70	0 - Reading and Writing	you\nneed\nthese\nbasics	1	2020-01-31 12:25:47.064645	2	2020-01-31 15:36:03.373036	2
+72	History of the world 1300	very deep history explanation until the anno 1300	1	2020-01-31 12:25:47.064645	2	2020-01-31 15:36:36.773466	7
+73	stars and coastlines	astrology - the real story	1	2020-01-31 12:25:47.064645	2	2020-01-31 15:37:05.214892	2
+74	Latin	omnia gallia in tres partes divida est\n\n\nblabla	2	2020-01-31 12:35:39.40397	2	2020-01-31 15:37:30.094193	6
 \.
 
 

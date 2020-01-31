@@ -152,8 +152,10 @@ ALTER TABLE ONLY public.openacademy_session ALTER COLUMN id SET DEFAULT nextval(
 --
 
 COPY public.openacademy_session (id, name, start_date, duration, seats, instructor_id, course_id, create_uid, create_date, write_uid, write_date) FROM stdin;
-1	Week 11	2011-02-07	12.25	15	\N	73	1	2020-01-31 15:20:49.123885	1	2020-01-31 15:20:49.123885
-2	Week 15	2011-04-11	10.00	12	\N	73	1	2020-01-31 15:20:49.123885	1	2020-01-31 15:20:49.123885
+1	Week 11	2011-02-07	12.25	15	36	73	1	2020-01-31 15:20:49.123885	2	2020-01-31 15:39:56.037378
+2	Week 15	2011-04-11	10.00	12	36	73	1	2020-01-31 15:20:49.123885	2	2020-01-31 15:40:26.282526
+3	Week 5	2020-01-27	22.00	8	34	70	2	2020-01-31 15:41:31.448959	2	2020-01-31 15:41:31.448959
+4	Week 14	2020-03-30	55.00	17	31	72	2	2020-01-31 15:42:22.61897	2	2020-01-31 15:42:22.61897
 \.
 
 
@@ -161,7 +163,7 @@ COPY public.openacademy_session (id, name, start_date, duration, seats, instruct
 -- Name: openacademy_session_id_seq; Type: SEQUENCE SET; Schema: public; Owner: odoo
 --
 
-SELECT pg_catalog.setval('public.openacademy_session_id_seq', 2, true);
+SELECT pg_catalog.setval('public.openacademy_session_id_seq', 4, true);
 
 
 --
@@ -170,14 +172,6 @@ SELECT pg_catalog.setval('public.openacademy_session_id_seq', 2, true);
 
 ALTER TABLE ONLY public.openacademy_session
     ADD CONSTRAINT openacademy_session_pkey PRIMARY KEY (id);
-
-
---
--- Name: openacademy_session openacademy_session_course_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: odoo
---
-
-ALTER TABLE ONLY public.openacademy_session
-    ADD CONSTRAINT openacademy_session_course_id_fkey FOREIGN KEY (course_id) REFERENCES public.openacademy_course(id) ON DELETE CASCADE;
 
 
 --
