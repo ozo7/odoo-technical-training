@@ -29,7 +29,10 @@ class Session(models.Model):
     start_date = fields.Date()
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     seats = fields.Integer(string="Number of seats")
-    instructor_id = fields.Many2one('res.partner', string="Instructor")
+    # domain declared as list is server-side evaluated
+    # domain declared as a string is client-side evaluated
+    instructor_id = fields.Many2one('res.partner', string="Instructor", domain=[('instructor', '=', True)])
+    # the above is relevant for the selection of an instructor from the form view of the session instance
     course_id = fields.Many2one('openacademy.course', ondelete='cascade', string="Course", required=True)
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
 

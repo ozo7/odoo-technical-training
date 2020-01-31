@@ -28,7 +28,7 @@
             <field name="start_date">2011-02-07</field>
             <field name="duration">12.25</field>
             <field name="seats">15</field>
-            <field name="course_id">17</field>
+            <field name="course_id">73</field>
         </record>
 
         <record model="openacademy.session" id="sess2">
@@ -36,8 +36,9 @@
             <field name="start_date">2011-04-11</field>
             <field name="duration">10.00</field>
             <field name="seats">12</field>
-            <field name="course_id">17</field>
+            <field name="course_id">73</field>
         </record>
+
 
     </data>
 </odoo>
