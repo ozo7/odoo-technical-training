@@ -4,13 +4,6 @@ from datetime import timedelta
 from odoo import models, fields, api, exceptions
 
 
-# class openacademy(models.Model):
-#     _name = 'openacademy.openacademy'
-#     _description = 'openacademy.openacademy'
-#
-#     name = fields.Char()
-#     description = fields.Text()
-
 class Course(models.Model):
     _name = 'openacademy.course'
     _description = "OpenAcademy Courses"
@@ -62,11 +55,20 @@ class Session(models.Model):
     # OK -- why does it not offer the Teachers to be selected? => server restart resolved this problem
     course_id = fields.Many2one('openacademy.course', ondelete='cascade', string="Course", required=True)
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
-
+    color = fields.Integer()
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
     end_date = fields.Date(string="End Date", store=True, compute='_get_end_date', inverse='_set_end_date')
     hours = fields.Float(string="Duration in hours", compute='_get_hours', inverse='_set_hours')
+    attendees_count = fields.Integer(string="Attendees count", compute='_get_attendees_count', store=True)
+
+    # Olaf: just for testing:
     testingField = fields.Integer(default=7)
+
+
+    @api.depends('attendee_ids')
+    def _get_attendees_count(self):
+        for r in self:
+            r.attendees_count = len(r.attendee_ids)
 
     @api.depends('duration')
     def _get_hours(self):
