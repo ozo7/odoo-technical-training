@@ -1,10 +1,10 @@
-en~fr~de~mottype_id
-good morning~bonjour~guten Morgen~other
-yellow~jaune~gelb~adjective
-green~vert~gruen~adjective
-man~l'homme~der Mann~noun
-woman~la femme~die Frau~noun
-traffic light~le feu~die Ampel~noun
-to swim~nager~schwimmen~verb
-usually~normalement~gewoehnlich~adverb
-today~aujourd'hui~heute~adverb
+en~fr~de~mottype_id~mottype_base
+good morning~bonjour~guten Morgen~other~9
+yellow~jaune~gelb~adjective~2
+green~vert~gruen~adjective~2
+man~l'homme~der Mann~noun~10
+woman~la femme~die Frau~noun~10
+traffic light~le feu~die Ampel~noun~10
+to swim~nager~schwimmen~verb~1
+usually~normalement~gewoehnlich~adverb~3
+today~aujourd'hui~heute~adverb~3

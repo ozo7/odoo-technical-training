@@ -4,7 +4,7 @@
 
 <record id="mot_type_tree_view" model="ir.ui.view">
     <field name="name">Grammar Types of Words</field>
-    <field name="model">mot.type</field>
+    <field name="model">vv.mot.type</field>
     <field name="arch" type="xml">
         <tree>
             <field name="mottype"/>
@@ -14,7 +14,7 @@
 </record>
 <record id="mot_gender_tree_view" model="ir.ui.view">
     <field name="name">Gender Types of Words</field>
-    <field name="model">mot.gender</field>
+    <field name="model">vv.mot.gender</field>
     <field name="arch" type="xml">
         <tree>
             <field name="motgender"/>
@@ -31,17 +31,17 @@
 <act_window
     id="mot_de_langue_action"
     name="Vocabulary"
-    res_model="mot.de.langue"
+    res_model="vv.mot.de.langue"
 />
 
 <record model="ir.actions.act_window" id="word_grammar_types_action">
     <field name="name">Grammar Types of Words</field>
-    <field name="res_model">mot.type</field>
+    <field name="res_model">vv.mot.type</field>
     <field name="view_mode">tree</field>    
 </record>
 <record model="ir.actions.act_window" id="word_gender_types_action">
     <field name="name">Gender Types of Words</field>
-    <field name="res_model">mot.gender</field>
+    <field name="res_model">vv.mot.gender</field>
     <field name="view_mode">tree</field>    
 </record>
 

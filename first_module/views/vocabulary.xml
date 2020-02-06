@@ -2,7 +2,7 @@
 
 <record id="mot_de_langue_form_view" model="ir.ui.view">
     <field name="name">Vocabulary Word</field>
-    <field name="model">mot.de.langue</field>
+    <field name="model">vv.mot.de.langue</field>
     <field name="arch" type="xml">
         <form>
             <group>
@@ -10,6 +10,9 @@
                 <field name="fr"/>
                 <field name="de"/>
                 <field name="mottype_id"/>
+                <field name="mottype_base"/>
+                <field name="mottype"/>
+                <field name="mottype_gender"/>
                 <field name="create_uid"/>                           
                 <field name="write_date"/>                
             </group>
@@ -19,13 +22,16 @@
 
 <record id="mot_de_langue_tree_view" model="ir.ui.view">
     <field name="name">Vocabulary List</field>
-    <field name="model">mot.de.langue</field>
+    <field name="model">vv.mot.de.langue</field>
     <field name="arch" type="xml">
         <tree>
             <field name="en"/>
             <field name="fr"/>
             <field name="de"/>     
             <field name="mottype_id"/>                    
+            <field name="mottype_base"/>
+            <field name="mottype"/>
+            <field name="mottype_gender"/>
             <field name="write_date"/>                            
         </tree>
     </field>    
@@ -33,7 +39,7 @@
 
 <record id="mot_de_langue_search_view" model="ir.ui.view">
     <field name="name">Vocabulary Search</field>
-    <field name="model">mot.de.langue</field>
+    <field name="model">vv.mot.de.langue</field>
     <field name="arch" type="xml">
         <search>
             <field name="en"/>
@@ -48,7 +54,7 @@
 <act_window
     id="mot_de_langue_action"
     name="Vocabulary"
-    res_model="mot.de.langue"
+    res_model="vv.mot.de.langue"
 />
 
 <menuitem

@@ -4,7 +4,7 @@
 
 <record id="motsXusers_tree_view" model="ir.ui.view">
     <field name="name">Words X Learners</field>
-    <field name="model">mots.learners</field>
+    <field name="model">vv.mots.learners</field>
     <field name="arch" type="xml">
         <tree>
             <field name="mot_de_langue_id"/>
@@ -23,7 +23,7 @@
 
 <record model="ir.actions.act_window" id="motsXusers_action">
     <field name="name">Words n Users</field>
-    <field name="res_model">mots.learners</field>
+    <field name="res_model">vv.mots.learners</field>
     <field name="view_mode">tree</field>    
 </record>
 
