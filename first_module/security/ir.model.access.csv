@@ -1,7 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_mot_de_langue,access_mot_de_langue,model_vv_mot_de_langue,,1,0,0,0
 access_mot_type,access_grammar_type,model_vv_mot_type,,1,1,1,1
-access_mot_gender,access_gender_type,model_vv_mot_gender,,1,1,1,1
 access_mot_de_langue_editor,Vocabulary Editor,model_vv_mot_de_langue,vocabulary_editor,1,1,1,1
 access_mots_learners,access_mots_learners,model_vv_mots_learners,,1,1,1,1
 access_gender_combo,access_gender_combo,model_vv_gender_combo,,1,1,1,1

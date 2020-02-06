@@ -9,10 +9,25 @@
                 <field name="en"/>
                 <field name="fr"/>
                 <field name="de"/>
+                <field name="mottype_id"/>              
+                <field name="create_uid"/>                           
+                <field name="write_date"/>                
+            </group>
+        </form>
+    </field>    
+</record>
+
+<record id="noun_form_view" model="ir.ui.view">
+    <field name="name">Vocabulary Word</field>
+    <field name="model">vv.noun</field>
+    <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="gender_combo"/>
+                <field name="en"/>
+                <field name="fr"/>
+                <field name="de"/>
                 <field name="mottype_id"/>
-                <field name="mottype_base"/>
-                <field name="mottype"/>
-                <field name="mottype_gender"/>
                 <field name="create_uid"/>                           
                 <field name="write_date"/>                
             </group>
@@ -28,10 +43,22 @@
             <field name="en"/>
             <field name="fr"/>
             <field name="de"/>     
+            <field name="mottype_id"/>                                
+            <field name="write_date"/>                            
+        </tree>
+    </field>    
+</record>
+
+<record id="noun_tree_view" model="ir.ui.view">
+    <field name="name">Nouns List</field>
+    <field name="model">vv.noun</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="gender_combo"/>
+            <field name="en"/>
+            <field name="fr"/>
+            <field name="de"/>     
             <field name="mottype_id"/>                    
-            <field name="mottype_base"/>
-            <field name="mottype"/>
-            <field name="mottype_gender"/>
             <field name="write_date"/>                            
         </tree>
     </field>    
@@ -56,6 +83,11 @@
     name="Vocabulary"
     res_model="vv.mot.de.langue"
 />
+<act_window
+    id="nouns_action"
+    name="Nouns"
+    res_model="vv.noun"
+/>
 
 <menuitem
     id="vocabulary_menu"
@@ -66,5 +98,13 @@
 />
 <!-- NO-the below does not help - The custom icon is not displayed in the app overview -->
 <!-- <menuitem name="menu_name" id="unique_id" web_icon="first_module,static/description/icon.png" sequence="1"/> -->
+
+<menuitem
+    id="nouns_menu"
+    name="Nouns"
+    action="nouns_action"
+    parent="vocabulary_menu"
+    sequence="6"
+/>
 
 </odoo>

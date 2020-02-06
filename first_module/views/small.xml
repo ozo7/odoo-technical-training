@@ -14,11 +14,12 @@
 </record>
 <record id="mot_gender_tree_view" model="ir.ui.view">
     <field name="name">Gender Types of Words</field>
-    <field name="model">vv.mot.gender</field>
+    <field name="model">vv.gender.combo</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="motgender"/>
-            <field name="explanation"/>                       
+            <field name="combo"/>
+            <field name="fr"/>
+            <field name="de"/>                       
         </tree>
     </field>    
 </record>
@@ -40,8 +41,8 @@
     <field name="view_mode">tree</field>    
 </record>
 <record model="ir.actions.act_window" id="word_gender_types_action">
-    <field name="name">Gender Types of Words</field>
-    <field name="res_model">vv.mot.gender</field>
+    <field name="name">Gender Combos</field>
+    <field name="res_model">vv.gender.combo</field>
     <field name="view_mode">tree</field>    
 </record>
 
