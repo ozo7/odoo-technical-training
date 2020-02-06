@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "openacademy",
+    'name': "Olafs First Module",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
+        first module of olaf following the developer cookbook
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'description': """
+        long description blabla
+    """,
+
+    'author': "Olaf",
+    'website': "not defined yet",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -26,14 +26,13 @@
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
-        #'views/views.xml',
-        'views/templates.xml',
-        'views/openacademy.xml',
-        'views/partner.xml',
-        #'demo/demo.xml', # not needed anymore, I have database dump and load scripts
+        'views/vocabulary.xml',
+        'views/small.xml',
+        'views/relations.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'application':True,
 }

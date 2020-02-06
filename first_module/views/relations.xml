@@ -1,0 +1,45 @@
+<odoo>
+
+<!-- ****************************** Views ************************************** -->
+
+<record id="motsXusers_tree_view" model="ir.ui.view">
+    <field name="name">Words X Learners</field>
+    <field name="model">mots.learners</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="mot_de_langue_id"/>
+            <field name="res_partner_id"/>
+            <field name="timesLearnt"/>
+
+        </tree>
+    </field>    
+</record>
+
+
+
+
+<!-- ****************************** Actions ************************************ -->
+<!-- id must contain the file name of the model -->
+
+<record model="ir.actions.act_window" id="motsXusers_action">
+    <field name="name">Words n Users</field>
+    <field name="res_model">mots.learners</field>
+    <field name="view_mode">tree</field>    
+</record>
+
+<!-- ****************************** Menus ************************************** -->
+<menuitem
+    id="relation_menu"
+    name="relation data"
+    parent="vocabulary_menu"
+    sequence="8"
+/>
+<menuitem
+    id="rel_mots_users_menu"
+    name="motsXusers"
+    action="motsXusers_action"
+    parent="relation_menu"
+    sequence="1"
+/>
+
+</odoo>

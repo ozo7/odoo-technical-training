@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vocabulary_editor" model="res.groups">
+        <field name="name">Vocabulary Editor</field>
+    </record>
+    
+</odoo>
