@@ -23,13 +23,8 @@
     <field name="arch" type="xml">
         <form>
             <group>
-                <field name="gender_combo"/>
-                <field name="en"/>
-                <field name="fr"/>
-                <field name="de"/>
-                <field name="mottype_id"/>
-                <field name="create_uid"/>                           
-                <field name="write_date"/>                
+                <field name="vv_mot_de_langue_id"/>
+                <field name="gender_combo"/>                            
             </group>
         </form>
     </field>    
@@ -54,12 +49,8 @@
     <field name="model">vv.noun</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="gender_combo"/>
-            <field name="en"/>
-            <field name="fr"/>
-            <field name="de"/>     
-            <field name="mottype_id"/>                    
-            <field name="write_date"/>                            
+            <field name="vv_mot_de_langue_id"/>
+            <field name="gender_combo"/>                          
         </tree>
     </field>    
 </record>

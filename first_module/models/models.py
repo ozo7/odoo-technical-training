@@ -1,5 +1,7 @@
+import logging
 from odoo import models, fields, api
-
+# create a logger to be used in the object
+_logger = logging.getLogger(__name__)
 
 class MotType(models.Model):
     _name = 'vv.mot.type'
@@ -13,9 +15,12 @@ class MotType(models.Model):
         string='words of this grammar type',
     )
 
+
 class MotDeLangue(models.Model):
     _name = 'vv.mot.de.langue'
-    _description = 'a single vocabulary item'
+    # _rec_name is created by the overriden name_get below.    
+    _description = 'a single vocabulary item'   
+   
     fr = fields.Char('French')
     de = fields.Char('German')
     en = fields.Char('English')
@@ -27,15 +32,33 @@ class MotDeLangue(models.Model):
     # learners_ids = fields.Many2many(
     #     'res.partner', string='learners',
     # )
-
     category = fields.Char('none')
     tags = fields.Char('no tags')
+    
+    def name_get(self):        
+        res = []        
+        for s in self:
+            newname = s.fr + ' || ' + s.de
+            #print('>>> new name: %s', newname)            
+            res.append((s.id, newname))
+        return res
+
+
+        
+
 
 class Noun(models.Model):
-    _name = 'vv.noun'
+    _name = 'vv.noun'     
     _description = 'noun that as a word specialty can have a gender'
-    _inherit = 'vv.mot.de.langue'
+    _inherits = {'vv.mot.de.langue': 'vv_mot_de_langue_id'}
+    _log_access=False
 
+    vv_mot_de_langue_id = fields.Many2one(
+        'vv.mot.de.langue',
+        string='I am part of this vocabulary word record',
+        required=True,
+        ondelete='cascade',        
+        )
     gender_combo = fields.Many2one('vv.gender.combo', string='gender sequence for the different languages')
 
 class GenderCombo(models.Model):
