@@ -38,3 +38,14 @@ class TMotEdit(models.Model):
             'de':self.de,
             'mottype_id': self.mottype.id,
         })
+        # refresh the vocabulary list, get the action that loads the list view of the vocabulary
+        myView = {
+            "type": "ir.actions.act_window",
+            "res_model": "vv.mot.de.langue",
+            "views": [[False, "tree"], [False, "form"]],
+            #"domain": [["customer", "=", true]],
+        }
+        ### Olaf: the below 2 lines do not work!
+        #action = self.env.ref('first_module.mot_de_langue_action')        
+        #action.read()
+        return myView
