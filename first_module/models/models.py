@@ -10,10 +10,10 @@ class MotType(models.Model):
     _log_access=False
     mottype = fields.Char('type of word')
     explanation = fields.Char('explanation')
-    zz_mot_de_langue_ids = fields.One2many(
-        'vv.mot.de.langue', 'mottype_id',
-        string='words of this grammar type',
-    )
+    # zz_mot_de_langue_ids = fields.One2many(
+    #     'vv.mot.de.langue', 'mottype_id',
+    #     string='words of this grammar type',
+    # )    
 
 
 class MotDeLangue(models.Model):
@@ -35,7 +35,7 @@ class MotDeLangue(models.Model):
     category = fields.Char('none')
     tags = fields.Char('no tags')
     
-    def name_get(self):        
+    def name_get(self):    
         res = []        
         for s in self:
             newname = s.fr + ' || ' + s.de
@@ -60,6 +60,8 @@ class Noun(models.Model):
         ondelete='cascade',        
         )
     gender_combo = fields.Many2one('vv.gender.combo', string='gender sequence for the different languages')
+
+
 
 class GenderCombo(models.Model):
     _name = 'vv.gender.combo'
@@ -93,4 +95,5 @@ class WordsXLearners(models.Model):
     )
 
     timesLearnt = fields.Integer(default=0)
+
 

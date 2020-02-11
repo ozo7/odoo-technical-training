@@ -20,15 +20,20 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'product',
+        'stock',        
+        ],
 
     # always loaded
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/vocabulary.xml',
-        'views/small.xml',
+        'views/small.xml',        
         'views/relations.xml',
+        'views/wizard.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

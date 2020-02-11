@@ -1,0 +1,51 @@
+<odoo>
+
+
+<record id="word_creation_wizard_form" model="ir.ui.view">
+    <field name='name'>word creation</field>
+    <field name='model'>t.mot</field>
+    <field name='arch' type='xml'>
+    <form string="create word">
+    <sheet>
+        <group>
+        <field name='en' />        
+        </group>
+        <group>
+        <field name='fr' />        
+        </group>
+        <group>
+        <field name='de' />        
+        </group>
+        <group>
+        <field name='mottype' />                
+        </group>
+    </sheet>
+    <footer>
+    <button name='saveWord'
+        string='save'
+        class='btn-primary'
+        type='object'/>
+    </footer>
+    </form>
+    </field>
+</record>
+
+
+<act_window
+    id="t_mot_action"
+    name="newWord"
+    res_model="t.mot"
+    view_mode = "form"
+    target = "new"
+/>
+
+<menuitem
+    id="new_word_menu"
+    name="new Word"    
+    action="t_mot_action"
+    parent="vocabulary_menu"
+    sequence="8"
+/>
+
+
+</odoo>
