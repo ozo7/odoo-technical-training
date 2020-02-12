@@ -1,5 +1,7 @@
 <odoo>
 
+<!-- ****************************** Views ************************************** -->
+
 <record id="mot_de_langue_form_view" model="ir.ui.view">
     <field name="name">Vocabulary Word</field>
     <field name="model">vv.mot.de.langue</field>
@@ -86,6 +88,7 @@
     </field>    
 </record>
 
+<!-- ****************************** Actions ************************************ -->
 
 <!-- id must contain the file name of the model -->
 <act_window
@@ -98,6 +101,16 @@
     name="Nouns"
     res_model="vv.noun"
 />
+<!-- just a simple view with a certain domain defined -->
+<act_window id="action_all_adverbs"
+    name="All adverbs"
+    res_model="vv.mot.de.langue"
+    view_mode="list,form"
+    domain="[('mottype_id','=',4)]"
+/>
+
+
+<!-- ****************************** Menus ************************************** -->
 
 <menuitem
     id="vocabulary_menu"
@@ -116,5 +129,13 @@
     parent="vocabulary_menu"
     sequence="6"
 />
+
+<menuitem
+    id="menu_test_finally"
+    name="Adverbs"
+    parent="vocabulary_menu"
+    action="action_all_adverbs"
+/>
+
 
 </odoo>

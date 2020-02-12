@@ -13,7 +13,11 @@ class MotType(models.Model):
     # zz_mot_de_langue_ids = fields.One2many(
     #     'vv.mot.de.langue', 'mottype_id',
     #     string='words of this grammar type',
-    # )    
+    # )
+
+    def test_link2view(self):
+         action = self.env.ref('first_module.word_gender_types_action').read()[0]
+         return action
 
 
 class MotDeLangue(models.Model):

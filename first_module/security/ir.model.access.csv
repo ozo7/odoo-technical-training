@@ -5,5 +5,4 @@ access_mot_de_langue_editor,Vocabulary Editor,model_vv_mot_de_langue,vocabulary_
 access_mots_learners,access_mots_learners,model_vv_mots_learners,,1,1,1,1
 access_gender_combo,access_gender_combo,model_vv_gender_combo,,1,1,1,1
 access_noun,access_noun,model_vv_noun,,1,1,1,1
-access_t_mot,access_t_mot,model_t_mot,base.group_user,1,1,1,1
 access_v_nouns_x_genders,access_v_nouns_x_genders,model_v_nouns_x_genders,base.group_user,1,0,0,0

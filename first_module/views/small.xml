@@ -10,8 +10,14 @@
             <field name="mottype"/>
             <field name="explanation"/>                       
         </tree>
+        <!--    Olaf: Trying to make a smart button, did not work. 
+            <button class="oe_stat_button" type="object">
+        </button> -->
     </field>    
 </record>
+
+
+
 <record id="mot_gender_tree_view" model="ir.ui.view">
     <field name="name">Gender Types of Words</field>
     <field name="model">vv.gender.combo</field>

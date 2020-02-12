@@ -20,7 +20,7 @@ class ProductProduct(models.Model):
         return stock_levels
 
 
-class TMotEdit(models.Model):
+class TMotEdit(models.TransientModel):
     _name = 't.mot'
     _description = 'wizard for entering new words'
 
@@ -62,8 +62,8 @@ class VNounsXGenders(models.Model):
 
     mot_fr = fields.Char('French')
     mot_de = fields.Char('German')
-    g_fr = fields.Char('gFrench')
-    g_de = fields.Char('gGerman')
+    g_fr = fields.Char('genderFr')
+    g_de = fields.Char('genderDE')
     
     def init(self):        
         tools.drop_view_if_exists(self.env.cr, self._table)
