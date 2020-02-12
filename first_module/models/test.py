@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import fields, models
+from odoo import fields, models, api, tools
+
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
@@ -51,3 +54,32 @@ class TMotEdit(models.Model):
         action = self.env.ref('first_module.mot_de_langue_action')        
         myView = action.read()[0]
         return myView
+
+class VNounsXGenders(models.Model):
+    _name = 'v.nouns.x.genders'
+    _description = 'view to join nouns and their genders'
+    _auto = False
+
+    mot_fr = fields.Char('French')
+    mot_de = fields.Char('German')
+    g_fr = fields.Char('gFrench')
+    g_de = fields.Char('gGerman')
+    
+    def init(self):        
+        tools.drop_view_if_exists(self.env.cr, self._table)
+        self.env.cr.execute("""
+            CREATE OR REPLACE VIEW v_nouns_x_genders AS (
+                SELECT
+	 			row_number() OVER () AS id,
+	 			m.fr as mot_fr,
+	 			gc.fr as g_fr,
+	 			m.de as mot_de,
+	 			gc.de as g_de
+	 			FROM public.vv_mot_de_langue m
+                    right join public.vv_noun n
+                        on m.id = n.vv_mot_de_langue_id
+                    left join public.vv_gender_combo gc
+                        on n.gender_combo = gc.id
+            )
+        """)
+       

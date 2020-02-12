@@ -94,6 +94,7 @@ COPY public.vv_noun (id, vv_mot_de_langue_id, gender_combo) FROM stdin;
 4	28	9
 5	29	9
 6	30	9
+7	31	5
 \.
 
 
@@ -101,7 +102,7 @@ COPY public.vv_noun (id, vv_mot_de_langue_id, gender_combo) FROM stdin;
 -- Name: vv_noun_id_seq; Type: SEQUENCE SET; Schema: public; Owner: odoo
 --
 
-SELECT pg_catalog.setval('public.vv_noun_id_seq', 6, true);
+SELECT pg_catalog.setval('public.vv_noun_id_seq', 7, true);
 
 
 --

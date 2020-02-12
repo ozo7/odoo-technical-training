@@ -30,9 +30,26 @@
     </field>    
 </record>
 
+<!-- Improved, inherited vocabulary view -->
+<record id="mot_de_langue_tree_view2" model="ir.ui.view">
+    <field name="name">Vocabulary List 2</field>
+    <field name="model">vv.mot.de.langue</field>
+    <field name="mode">primary</field>
+    <field name="priority">9</field>
+    <field name="inherit_id" ref="mot_de_langue_tree_view"/>
+    <field name="arch" type="xml">
+        <!-- add a new field -->
+        <xpath expr="//field[@name='mottype_id']" position="after">
+          <field name="create_date" string="Created at"/>
+        </xpath>
+    </field>    
+</record>
+
 <record id="mot_de_langue_tree_view" model="ir.ui.view">
     <field name="name">Vocabulary List</field>
     <field name="model">vv.mot.de.langue</field>
+    <field name="mode">primary</field>
+    <field name="priority">1</field>
     <field name="arch" type="xml">
         <tree>
             <field name="en"/>
@@ -43,6 +60,8 @@
         </tree>
     </field>    
 </record>
+
+
 
 <record id="noun_tree_view" model="ir.ui.view">
     <field name="name">Nouns List</field>

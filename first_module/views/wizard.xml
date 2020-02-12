@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
 
@@ -30,7 +31,19 @@
     </field>
 </record>
 
-
+<record id="v_nouns_x_genders_tree_view" model="ir.ui.view">
+    <field name="name">Nouns and their genders</field>
+    <field name="model">v.nouns.x.genders</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="mot_fr"/>
+            <field name="g_fr"/>
+            <field name="mot_de"/>
+            <field name="g_de"/>                            
+        </tree>
+    </field>    
+</record>
+ 
 <act_window
     id="t_mot_action"
     name="newWord"
@@ -39,12 +52,27 @@
     target = "new"
 />
 
+<act_window
+    id="v_nouns_x_genders_action"
+    name="NounsXGenders"
+    res_model="v.nouns.x.genders" 
+    view_mode = "tree,form"  
+/>
+
 <menuitem
     id="new_word_menu"
     name="new Word"    
     action="t_mot_action"
     parent="vocabulary_menu"
     sequence="8"
+/>
+
+<menuitem
+    id="nouns_x_genders"
+    name="Nouns and their genders"    
+    action="v_nouns_x_genders_action"
+    parent="vocabulary_menu"
+    sequence="9"
 />
 
 
