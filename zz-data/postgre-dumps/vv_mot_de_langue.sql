@@ -167,7 +167,6 @@ COPY public.vv_mot_de_langue (id, fr, de, en, mottype_id, category, tags, create
 31	l'arbre	der Baum	the tree	1	\N	\N	2	2020-02-10 13:57:12.345593	2	2020-02-10 13:57:12.345593
 33	la voiture	das Auto	the car	1	\N	\N	2	2020-02-11 14:41:19.575411	2	2020-02-11 14:41:19.575411
 34	l'oreille	das Ohr	the ear	1	\N	\N	2	2020-02-11 15:10:08.663286	2	2020-02-11 15:10:08.663286
-35	le nez	die Nase	the nose	4	\N	\N	2	2020-02-11 15:17:54.674714	2	2020-02-11 15:18:47.003581
 39	la jambe	das Bein	the leg	1	\N	\N	2	2020-02-11 15:46:03.05282	2	2020-02-11 15:46:03.05282
 40	le bras	der Arm	the arm	1	\N	\N	2	2020-02-11 15:48:05.016877	2	2020-02-11 15:48:05.016877
 41	la tête	der Kopf	the head	1	\N	\N	2	2020-02-11 15:50:26.103893	2	2020-02-11 15:50:26.103893
@@ -176,6 +175,11 @@ COPY public.vv_mot_de_langue (id, fr, de, en, mottype_id, category, tags, create
 49	le dent	der Zahn	the tooth	1	\N	\N	2	2020-02-11 17:01:36.457672	2	2020-02-11 17:01:36.457672
 50	la fesse	die Pobacke	the buttock	1	\N	\N	2	2020-02-11 17:03:52.923447	2	2020-02-11 17:12:08.583054
 51	l'arc-en-ciel	der Ellbogen	the ellbow	1	\N	\N	2	2020-02-11 17:19:24.989787	2	2020-02-11 17:19:24.989787
+35	le nez	die Nase	the nose	1	\N	\N	2	2020-02-11 15:17:54.674714	2	2020-02-12 17:50:22.601872
+52	le truc	der Trick	the trick	1	\N	\N	2	2020-02-13 09:03:10.469172	2	2020-02-13 09:03:10.469172
+53	ajouter	hinzufuegen	to add	2	\N	\N	2	2020-02-13 09:04:05.113258	2	2020-02-13 09:04:05.113258
+54	Bon rétablissement !	Gute Besserung!	A speedy recovery!	5	\N	\N	2	2020-02-13 09:09:00.826024	2	2020-02-13 09:09:00.826024
+57	\N	\N	\N	\N	\N	\N	2	2020-02-13 15:18:41.857512	2	2020-02-13 15:18:41.857512
 \.
 
 
@@ -183,7 +187,7 @@ COPY public.vv_mot_de_langue (id, fr, de, en, mottype_id, category, tags, create
 -- Name: vv_mot_de_langue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: odoo
 --
 
-SELECT pg_catalog.setval('public.vv_mot_de_langue_id_seq', 51, true);
+SELECT pg_catalog.setval('public.vv_mot_de_langue_id_seq', 57, true);
 
 
 --

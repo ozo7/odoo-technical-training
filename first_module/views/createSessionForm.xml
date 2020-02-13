@@ -1,0 +1,51 @@
+<odoo>
+
+<!-- ****************************** Actions ************************************ -->
+<act_window id="action_create_learning_session"
+name="bla"
+res_model="vv.learning.session"
+view_mode="form"
+/>
+
+
+<!-- ****************************** Views ************************************** -->
+
+<record id="form_learning_session" model="ir.ui.view">
+    <field name="name">Vocabulary Training Form2</field>
+    <field name="model">vv.learning.session</field>
+    <field name="priority">1</field>
+    <field name="arch" type="xml">
+        <form string="testing form">
+            <header>
+            <h2>some headerline</h2>
+            </header>
+            <sheet>
+                <field name="learner"/>
+                <field name="mot1"/>
+                <field name="mot2"/>
+                <field name="mot3"/>              
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record model="ir.actions.act_window.view" id="action_create_learning_session_form">
+    <field name="act_window_id" ref="action_create_learning_session"/>
+    <field name="view_id" ref="form_learning_session"/>
+    <!-- Precedence over form defined in act_window -->
+    <field name="view_mode">form</field>
+    <field name="sequence">10</field>
+</record>
+
+
+
+<!-- ****************************** Menus ************************************** -->
+<menuitem
+    id="form_entries2_menu"
+    name=">> learning sessions"
+    action="action_create_learning_session"
+    parent="input_forms_menu"
+    sequence="2"
+/>
+
+</odoo>

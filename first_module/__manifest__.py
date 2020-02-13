@@ -23,7 +23,7 @@
     'depends': [
         'base',
         'product',
-        'stock',        
+        'stock',
         ],
 
     # always loaded
@@ -31,13 +31,15 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/vocabulary.xml',
-        'views/small.xml',        
+        'views/small.xml',
         'views/relations.xml',
         'views/wizard.xml',
+        'views/formView.xml',
+        #'views/createSessionForm.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    'application':True,
+    'application': True,
 }

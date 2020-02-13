@@ -10,5 +10,5 @@ class Learner(models.Model):
     # use the abstract model to which the Learners relate to.
     # !! No. After talking to Xavier it is clear that the Abstract Model cannot be used as some kind of 'interface'.
     
-    #mots_ids = fields.Many2one('vva.mot.de.langue', string="foreign language word in learning scope", readonly=True)
+    #fields.One2Many('vv.learn.session', string="learning sessions")
     
