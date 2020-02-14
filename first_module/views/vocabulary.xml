@@ -111,6 +111,7 @@
 
 
 <!-- ****************************** Menus ************************************** -->
+<menuitem id="menu_vocabulary_root" name="Vocabulary Vault" sequence="100" web_icon="first_module,static/description/icon.png"/>
 
 <menuitem
     id="vocabulary_menu"

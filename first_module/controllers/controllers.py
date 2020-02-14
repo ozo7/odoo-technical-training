@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
 
 
-# class FirstModule(http.Controller):
-#     @http.route('/first_module/first_module/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class FirstModule(http.Controller):
+    @http.route('/test/test/', auth='public')
+    def index(self, **kw):
+        mots = http.request.env['vv.mot.de.langue']
+        return http.request.render('first_module.index', {
+            'mots': mots.search([])
+        })
 
 #     @http.route('/first_module/first_module/objects/', auth='public')
 #     def list(self, **kw):

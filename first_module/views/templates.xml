@@ -1,7 +1,19 @@
 <odoo>
     <data>
+
+        <template id="index">
+        <h2>this is template with id index</h2>
+            <title>Academy</title>
+            <t t-foreach="mots" t-as="mot">
+              <p>
+              <t t-esc="mot.fr"/>
+              <t t-esc="mot.de"/>             
+              </p>
+            </t>
+        </template>
+        
 <!--
-        <template id="listing">
+        <template id="listing">        
           <ul>
             <li t-foreach="objects" t-as="object">
               <a t-attf-href="#{ root }/objects/#{ object.id }">

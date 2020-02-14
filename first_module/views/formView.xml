@@ -3,7 +3,7 @@
 <!-- ****************************** Actions ************************************ -->
 <act_window id="action_mot_training"
 name="bla"
-res_model="vv.mot.de.langue"
+res_model="vv.learning.session"
 view_mode="form"
 />
 
@@ -12,38 +12,29 @@ view_mode="form"
 
 <record id="form_mot_training" model="ir.ui.view">
     <field name="name">Vocabulary Training Form</field>
-    <field name="model">vv.mot.de.langue</field>
+    <field name="model">vv.learning.session</field>
     <field name="priority">1</field>
     <field name="arch" type="xml">
-        <form string="testing form">
-            <header>
-                <button type="Object" name="testing_do1_model" string="testing_do1" class="btn-primary" />
-                <button type="action" name="testing_do2_action" string="testing_do2" />
-                <!-- <field name="state" widget="statusbar" /> -->
-            </header>
+        <form string="learning session form">
             <sheet>
             <group>
-                <group string="Group content" name="my_group_content">
-                    <field name="en" />               
-                </group>
-                <group string="Group content2" name="my_group_content2">
-                    <field name="fr" />
-                </group>
-                <div class="oe_button_box" name="button_box">
-                    <button class="oe_stat_button" name="do_something_with_model"
-                            string="do something with model" type="object"
-                            icon="fa-signal"/>
-                    <button class="oe_stat_button" name="do_something_else" type="action"
-                            icon="fa-bars"/>
-                </div>
-            
-                <tree>                   
-                    <field name="de"/>
-                </tree>
-                <form>
-                    <field name="mottype_id"/>
-                </form>
-            
+                <field name="learner"/>
+                <field name="started"/>
+            </group>
+            <group>
+                <field name="mot1"/>
+                <field name="mot2"/>
+                <field name="mot3"/>
+            </group>
+            <group>
+                <field name="mot1c"/>
+                <field name="mot2c"/>
+                <field name="mot3c"/>
+            </group>
+            <group>
+                <field name="mot1ok"/>
+                <field name="mot2ok"/>
+                <field name="mot3ok"/>
             </group>
             </sheet>
         </form>

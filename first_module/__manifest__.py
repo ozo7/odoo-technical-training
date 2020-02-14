@@ -35,7 +35,8 @@
         'views/relations.xml',
         'views/wizard.xml',
         'views/formView.xml',
-        #'views/createSessionForm.xml',
+        #'views/createSessionForm.xml',\
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

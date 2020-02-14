@@ -6,3 +6,5 @@ access_mots_learners,access_mots_learners,model_vv_mots_learners,,1,1,1,1
 access_gender_combo,access_gender_combo,model_vv_gender_combo,,1,1,1,1
 access_noun,access_noun,model_vv_noun,,1,1,1,1
 access_v_nouns_x_genders,access_v_nouns_x_genders,model_v_nouns_x_genders,base.group_user,1,0,0,0
+access_vv_learning_session,access_vv_learning_session,model_vv_learning_session,base.group_user,1,1,1,1
+
