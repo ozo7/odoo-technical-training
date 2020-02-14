@@ -23,13 +23,13 @@ class MotType(models.Model):
 
 
 class MotDeLangue(models.Model):
-    _name = 'vv.mot.de.langue'
+    _name = 'vv.mot.de.langue'    
     # _rec_name is created by the overriden name_get below.
     _description = 'a single vocabulary item'
 
-    fr = fields.Char('French')
-    de = fields.Char('German')
-    en = fields.Char('English')
+    fr = fields.Char('French', required=True)
+    de = fields.Char('German', required=True)
+    en = fields.Char('English', required=True)
     mottype_id = fields.Many2one(
         'vv.mot.type', string='grammar type of word',
         ondelete='set null',
@@ -42,12 +42,16 @@ class MotDeLangue(models.Model):
     tags = fields.Char('no tags')
     
     def name_get(self):
-        res = []
+        res = []        
         for s in self:
-            newname = s.fr + ' || ' + s.de
-            # print('>>> new name: %s', newname)
+            newname = (s.fr or '') + ' || ' + (s.de or '')            
             res.append((s.id, newname))
         return res
+
+    def get_html_name(self):
+        for s in self:
+            return (s.fr or '') + ' || ' + (s.de or '') 
+
 
 
 class Noun(models.Model):

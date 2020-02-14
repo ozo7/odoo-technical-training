@@ -3,13 +3,44 @@
 
         <template id="indexandsomename">
         <h2>this is template with id index</h2>
-            <title>Academy</title>
+            <title>This is the webpage title</title>
             <t t-foreach="mots" t-as="mot">
               <p>
               <t t-esc="mot.fr"/>
               <t t-esc="mot.de"/>             
               </p>
             </t>
+        </template>
+
+        <template id="mustbedifferent">
+        </template>
+        <template id="doesnotmatter">
+        </template>
+
+        <template id="singleMot">
+        <h2>this is template with id singleMot</h2>
+            <title>This is a single vocabulary word</title>            
+              <p>
+              <t t-esc="mot.fr"/>
+              <t t-esc="mot.de"/>             
+              </p>            
+        </template>
+
+        <template id="allthemots">        
+            <title>all the words without website enhancement</title>
+            <!-- this here does not work
+            TypeError: unsupported operand type(s) for +: 'bool' and 'str'
+             -->
+                <div class="oe_structure">
+                    <div class="container">
+                        <t t-foreach="mots" t-as="mot">
+                          <p>
+                            <a t-attf-href="/test/id/{{ slug(mot) }}">
+                            <t t-esc="mot.get_html_name()"/></a>
+                          </p>
+                        </t>
+                    </div>
+                </div>
         </template>
         
         <template id="myTemplateID">
