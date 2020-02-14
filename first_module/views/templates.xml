@@ -1,7 +1,7 @@
 <odoo>
     <data>
 
-        <template id="index">
+        <template id="indexandsomename">
         <h2>this is template with id index</h2>
             <title>Academy</title>
             <t t-foreach="mots" t-as="mot">
@@ -9,6 +9,24 @@
               <t t-esc="mot.fr"/>
               <t t-esc="mot.de"/>             
               </p>
+            </t>
+        </template>
+        
+        <template id="myTemplateID">
+        <h2>this is template with id myTemplateID</h2>
+            <title>Website Features enabled</title>
+            <t t-call="website.layout">
+                <t t-set="title">Academy</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <t t-foreach="mots" t-as="mot">
+                          <p>
+                          <t t-esc="mot.fr"/>
+                          <t t-esc="mot.de"/>             
+                          </p>
+                        </t>
+                    </div>
+                </div>
             </t>
         </template>
         

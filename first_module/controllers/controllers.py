@@ -2,11 +2,19 @@
 from odoo import http
 
 
-class FirstModule(http.Controller):
+class SomethingElseWhatever(http.Controller):
     @http.route('/test/test/', auth='public')
-    def index(self, **kw):
+    def indexandsomename(self, **kw):
         mots = http.request.env['vv.mot.de.langue']
-        return http.request.render('first_module.index', {
+        return http.request.render('first_module.indexandsomename', {
+            'mots': mots.search([])
+        })
+
+class SomethingWithWebsite(http.Controller):
+    @http.route('/test/website/', auth='public', website=True)
+    def myTemplateID(self, **kw):
+        mots = http.request.env['vv.mot.de.langue']
+        return http.request.render('first_module.myTemplateID', {
             'mots': mots.search([])
         })
 
