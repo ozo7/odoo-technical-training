@@ -23,10 +23,10 @@ class MotType(models.Model):
 
 
 class MotDeLangue(models.Model):
-    _name = 'vv.mot.de.langue'    
-    # _rec_name is created by the overriden name_get below.
+    _name = 'vv.mot.de.langue'
+    # _rec_name is also created by the overriden name_get below.
+    _rec_name = 'en'
     _description = 'a single vocabulary item'
-
     fr = fields.Char('French', required=True)
     de = fields.Char('German', required=True)
     en = fields.Char('English', required=True)

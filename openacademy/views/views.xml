@@ -4,7 +4,7 @@
 
     <record model="ir.ui.view" id="openacademy.list">
       <field name="name">openacademy list</field>
-      <field name="model">openacademy.openacademy</field>
+      <field name="model">openacademy.course</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -16,7 +16,7 @@
 
     <record model="ir.actions.act_window" id="openacademy.action_window">
       <field name="name">openacademy window</field>
-      <field name="res_model">openacademy.openacademy</field>
+      <field name="res_model">openacademy.course</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -25,7 +25,7 @@
 
       <record model="ir.actions.server" id="openacademy.action_server">
       <field name="name">openacademy server</field>
-      <field name="model_id" ref="model_openacademy_openacademy"/>
+      <field name="model_id" ref="model_openacademy_course"/>
       <field name="state">code</field>
       <field name="code">
         action = {

@@ -168,6 +168,7 @@ ALTER TABLE ONLY public.vv_learning_session ALTER COLUMN id SET DEFAULT nextval(
 --
 
 COPY public.vv_learning_session (id, learner, started, finished, mot1, mot2, mot3, mot1c, mot2c, mot3c, mot1ok, mot2ok, mot3ok) FROM stdin;
+1	33	2020-02-14	\N	20	21	24	0	0	0	0	0	0
 \.
 
 
@@ -175,7 +176,7 @@ COPY public.vv_learning_session (id, learner, started, finished, mot1, mot2, mot
 -- Name: vv_learning_session_id_seq; Type: SEQUENCE SET; Schema: public; Owner: odoo
 --
 
-SELECT pg_catalog.setval('public.vv_learning_session_id_seq', 1, false);
+SELECT pg_catalog.setval('public.vv_learning_session_id_seq', 1, true);
 
 
 --

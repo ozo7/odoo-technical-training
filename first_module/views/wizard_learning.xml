@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- ****************************** Actions ************************************ -->
+<act_window id="action_wizard_learning"
+name="wizard learning"
+res_model="vv.wizard.learning"
+view_mode="form"
+target="new"
+/>
+
+
+<!-- ****************************** Views ************************************** -->
+
+<record id="form_wizard_learning" model="ir.ui.view">
+    <field name="name">Wizard Learning</field>
+    <field name="model">vv.wizard.learning</field>
+    <field name="arch" type="xml">
+        <form string="wizard form">
+            <header>
+            <h2>your vocabulary</h2>            
+            </header>
+            <sheet>
+                <field name="learner_id"/>
+                <group>
+                    <field name="mot1_id"/>
+                    <field name="mot2_id"/>
+                    <field name="mot3_id"/>              
+                </group>
+                <group>
+                    <field name="mot1user"/>
+                    <field name="mot2user" attrs="{'invisible': [('state', '=', 'start')]}"/>
+                    <field name="mot3user"/>              
+                </group>
+            </sheet>
+            <field name="counter"/>  
+            <field name="info"/>  
+            <field name="state"/>  
+        </form>
+        <footer>
+        <button name='wizard_next'
+            string = 'next'
+            class = 'btn-primary'
+            type = 'object'
+        />
+        </footer>
+    </field>
+</record>
+
+
+<!-- ****************************** Menus ************************************** -->
+
+<menuitem
+    id="form_entries_menu"
+    name="wizard learning"
+    action="action_wizard_learning"
+    parent="input_forms_menu"
+    sequence="2"
+/>
+
+
+</odoo>

@@ -26,9 +26,9 @@ SET default_with_oids = false;
 
 CREATE TABLE public.vv_mot_de_langue (
     id integer NOT NULL,
-    fr character varying,
-    de character varying,
-    en character varying,
+    fr character varying NOT NULL,
+    de character varying NOT NULL,
+    en character varying NOT NULL,
     mottype_id integer,
     category character varying,
     tags character varying,
@@ -179,7 +179,6 @@ COPY public.vv_mot_de_langue (id, fr, de, en, mottype_id, category, tags, create
 52	le truc	der Trick	the trick	1	\N	\N	2	2020-02-13 09:03:10.469172	2	2020-02-13 09:03:10.469172
 53	ajouter	hinzufuegen	to add	2	\N	\N	2	2020-02-13 09:04:05.113258	2	2020-02-13 09:04:05.113258
 54	Bon rétablissement !	Gute Besserung!	A speedy recovery!	5	\N	\N	2	2020-02-13 09:09:00.826024	2	2020-02-13 09:09:00.826024
-57	\N	\N	\N	\N	\N	\N	2	2020-02-13 15:18:41.857512	2	2020-02-13 15:18:41.857512
 \.
 
 
@@ -187,7 +186,7 @@ COPY public.vv_mot_de_langue (id, fr, de, en, mottype_id, category, tags, create
 -- Name: vv_mot_de_langue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: odoo
 --
 
-SELECT pg_catalog.setval('public.vv_mot_de_langue_id_seq', 57, true);
+SELECT pg_catalog.setval('public.vv_mot_de_langue_id_seq', 58, true);
 
 
 --

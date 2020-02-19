@@ -18,13 +18,13 @@ view_mode="form"
         <form string="learning session form">
             <sheet>
             <group>
-                <field name="learner"/>
+                <field name="learner_id"/>
                 <field name="started"/>
             </group>
             <group>
-                <field name="mot1"/>
-                <field name="mot2"/>
-                <field name="mot3"/>
+                <field name="mot1_id"/>
+                <field name="mot2_id"/>
+                <field name="mot3_id"/>
             </group>
             <group>
                 <field name="mot1c"/>

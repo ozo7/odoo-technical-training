@@ -20,10 +20,10 @@ view_mode="form"
             <h2>some headerline</h2>
             </header>
             <sheet>
-                <field name="learner"/>
-                <field name="mot1"/>
-                <field name="mot2"/>
-                <field name="mot3"/>              
+                <field name="learner_id"/>
+                <field name="mot1_id"/>
+                <field name="mot2_id"/>
+                <field name="mot3_id"/>              
             </sheet>
         </form>
     </field>
